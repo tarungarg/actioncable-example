@@ -1,0 +1,6 @@
+.media.s-container
+  .media-body
+    .panel.panel-default
+      .panel-body.break-word
+        .text-subhead-2
+        != @message

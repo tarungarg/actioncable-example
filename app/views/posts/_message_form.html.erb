@@ -1,0 +1,15 @@
+<%= form_tag messages_path, remote: true, class: 'message_form' do %>
+  <div class=" panel panel-default paper-shadow">
+    <div class="panel-heading">
+      <h1>Post a new Message</h1>
+    </div>
+    <div class="panel-body">
+      <div class="message-form">
+        <%= text_area_tag 'message[message]', '', class: "form-control", rows: 3, id: "textarea", required: true, placeholder: 'Type a message...' %>
+      </div>
+    </div>
+    <div class="pull-right">
+        <input class="btn btn-primary" type="submit"  value="Submit message"}/>
+    </div>
+  </div>
+<% end %>

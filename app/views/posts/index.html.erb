@@ -1,0 +1,49 @@
+<div class="container">
+  <h3>ActioCable Chat</h3>
+  <div class="tabbable">
+    <ul class="nav nav-tabs" id="myTabs"> 
+      <li><a href="#chat1" class="active" data-toggle="tab" onclick="chatfirst()">Chat 1</a></li>
+      <li><a href="#chat2" data-toggle="tab" onclick="chatsecond()">Chat 2</a></li>
+      <li><a href="#chat3" data-toggle="tab" onclick="chatthird()">Chat 3</a></li>
+    </ul>
+    <div id="chat1" class="tab-pane"></div>
+    <div id="chat2" class="tab-pane"></div>
+    <div id="chat3" class="tab-pane"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    chatfirst();
+  });
+
+  function chatfirst(){
+    $('#chat2').html('');
+    $('#chat3').html('');
+    $.ajax({
+      type: "GET",
+      url: "/posts/chat_first",
+      dataType: 'script'
+    });
+  }
+
+  function chatthird(){
+    $('#chat1').html('');
+    $('#chat2').html('');
+    $.ajax({
+      type: "GET",
+      url: "/posts/chat_third",
+      dataType: 'script'
+    });
+  }
+
+  function chatsecond(){
+    $('#chat1').html('');
+    $('#chat3').html('');
+    $.ajax({
+      type: "GET",
+      url: "/posts/chat_second",
+      dataType: 'script'
+    });
+  }
+</script>
