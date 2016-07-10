@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cable
+//= require action_cable
 //= require chats
 //= require hamlcoffee
 //= require_tree ./templates
@@ -21,5 +21,5 @@
 (function() {
   this.App || (this.App = {});
 
-  App.cable = Cable.createConsumer('/cable');
+  App.cable = ActionCable.createConsumer('/cable');
 }).call(this);

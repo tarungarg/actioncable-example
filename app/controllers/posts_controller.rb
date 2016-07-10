@@ -15,4 +15,7 @@ class PostsController < ApplicationController
   def chat_third
     @messages = Message.all
   end
+
+  def show_page
+  end
 end

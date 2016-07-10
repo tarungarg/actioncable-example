@@ -5,11 +5,11 @@ Rails.application.routes.draw do
       get 'chat_first'
       get 'chat_second'
       get 'chat_third'
+      get 'show_page'
     end
   end
   mount ActionCable.server => '/cable'
   
-  match '/websocket', to: ActionCable.server, via: %i(get post)
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
