@@ -1,13 +1,13 @@
 function openChatConnections(message_channel, reply_channel, delete_channel, chat_box_id){
-  // try{
-  //   if (this.App.cable.subscriptions && this.App.cable.subscriptions.subscriptions.length > 1){
-  //       for (var i=0; i <= this.App.cable.subscriptions.subscriptions.length; i++) {
-  //         this.App.cable.subscriptions.remove(this.App.cable.subscriptions.subscriptions[i+1])
-  //       }
-  //   }
-  // } catch(e){
-  //   console.log(e)
-  // }
+  try{
+    if (this.App.cable.subscriptions && this.App.cable.subscriptions.subscriptions.length > 1){
+        for (var i=0; i <= this.App.cable.subscriptions.subscriptions.length; i++) {
+          this.App.cable.subscriptions.remove(this.App.cable.subscriptions.subscriptions[i+1])
+        }
+    }
+  } catch(e){
+    console.log(e)
+  }
 
   // Subscribe channel for main messages, passing id as for unique channel
   this.App.snippets = this.App.cable.subscriptions.create({channel: message_channel}, {
